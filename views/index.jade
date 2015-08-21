@@ -8,23 +8,22 @@ block body
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href="#") Brand
-    
+      a.navbar-brand(href="#") NTD-Web App
+
     .collapse.navbar-collapse.navbar-ex1-collapse
       ul.nav.navbar-nav
         li
-          a(href="view1") View1
-        li  
-          a(href="view2") View2 
-  .container      
+          a(href="view1") Home
+        li
+          a(href="view2") About
+  .container
     div(ng-controller='AppCtrl')
-      .jumbotron  
-        h1 Hello {{name}}
+      .jumbotron
+        h1 Demonstrating Web Traffic
       div(ng-view)
-    hr  
-    div
-      | Angular seed app: v
-      span(app-version)
+    hr
+    div &copy; 2015&nbsp;
+        a(href="http://www.nt.uni-saarland.de/", target="_blank") Telecommunications Lab
 
   script(src='js/lib/angular/angular.js')
   script(src='js/lib/angular/angular-route.js')

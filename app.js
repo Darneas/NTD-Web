@@ -23,7 +23,7 @@ app.set('view engine', 'jade');
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: 1 }));
+app.use(express.static(path.join(__dirname, 'public'), { etag: false, maxage: 1 }));
 app.use(app.router);
 
 // development only

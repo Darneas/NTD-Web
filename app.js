@@ -11,6 +11,11 @@ var express = require('express'),
 
 
 var app = module.exports = express();
+app.use(function(req, res, next) {
+  req.headers['if-none-match'] = 'no-match-for-this';
+  next();
+});
+app.disable("etag");
 
 /**
 * Configuration
@@ -23,7 +28,7 @@ app.set('view engine', 'jade');
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.static(path.join(__dirname, 'public'), { etag: false, maxage: 1 }));
+app.use(express.static(path.join(__dirname, 'public'), { etag: false, maxAge: 1 }));
 app.use(app.router);
 
 // development only
